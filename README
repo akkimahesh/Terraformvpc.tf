@@ -1,0 +1,37 @@
+Ìø† VPC Creation
+You start by creating a Virtual Private Cloud (VPC), which is your isolated virtual network in the cloud. It has its own IP address range (CIDR block) that defines the size of the network.
+
+Ì≥¶ Subnets Creation
+Inside the VPC, you create subnets. These are like separate sections or rooms inside your network:
+
+A public subnet (ÔøΩÔøΩÌºê) is where resources can connect directly to the internet.
+
+A private subnet (Ì≥¶Ì¥í) is isolated from the internet and typically used for backend resources.
+
+Ìºê Internet Gateway (IGW)
+An Internet Gateway (Ìºê) is attached to the VPC to allow communication between the public subnet and the internet ‚Äî it acts like the main entrance door.
+
+Ì∫ß Route Tables and Associations
+
+A route table (Ì∫ß) contains rules that direct traffic from subnets to the right destination (internet, NAT, or local subnet).
+
+The public subnet is associated with a route table that sends all outbound internet traffic (0.0.0.0/0) to the Internet Gateway (Ìºê).
+
+The private subnet has a different route table, which directs outbound internet traffic through a NAT Gateway (Ì¥Å) instead of the Internet Gateway.
+
+Ìºç Elastic IP (EIP)
+An Elastic IP (Ìºç) is a static public IP address reserved for your account. It‚Äôs attached to the NAT Gateway to give it a consistent internet-facing IP.
+
+Ì¥Å NAT Gateway
+A NAT Gateway (Ì¥Å) sits in the public subnet and enables resources in the private subnet to access the internet for updates or downloads, while keeping them unreachable from the outside.
+
+Ì¥ó Route Table Associations
+Each subnet is linked to its corresponding route table, ensuring that:
+
+Public subnet traffic goes directly to the internet (via IGW).
+
+Private subnet traffic goes through the NAT Gateway for secure internet access.
+
+`
+
+#VPC #AWS #CloudComputing #Terraform #InfrastructureAsCode #CloudInfrastructure #Subnet #InternetGateway #NATGateway #SecurityGroups #RouteTables #ElasticIP #CloudNetworking #AWSNetworking #DevOps #IaC #AWSCloud #NetworkSecurity #PublicSubnet #PrivateSubnet
