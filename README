@@ -1,31 +1,31 @@
-í¿  VPC Creation
+VPC Creation
 You start by creating a Virtual Private Cloud (VPC), which is your isolated virtual network in the cloud. It has its own IP address range (CIDR block) that defines the size of the network.
 
-í³¦ Subnets Creation
+ Subnets Creation
 Inside the VPC, you create subnets. These are like separate sections or rooms inside your network:
 
-A public subnet (ï¿½ï¿½í¼) is where resources can connect directly to the internet.
+A public subnet is where resources can connect directly to the internet.
 
-A private subnet (í³¦í´’) is isolated from the internet and typically used for backend resources.
+A private subnet is isolated from the internet and typically used for backend resources.
 
-í¼ Internet Gateway (IGW)
-An Internet Gateway (í¼) is attached to the VPC to allow communication between the public subnet and the internet â€” it acts like the main entrance door.
+ï¿½ï¿½ï¿½ Internet Gateway (IGW)
+An Internet Gateway is attached to the VPC to allow communication between the public subnet and the internet â€” it acts like the main entrance door.
 
-íº§ Route Tables and Associations
+ï¿½ï¿½ï¿½ Route Tables and Associations
 
-A route table (íº§) contains rules that direct traffic from subnets to the right destination (internet, NAT, or local subnet).
+A route table contains rules that direct traffic from subnets to the right destination (internet, NAT, or local subnet).
 
-The public subnet is associated with a route table that sends all outbound internet traffic (0.0.0.0/0) to the Internet Gateway (í¼).
+The public subnet is associated with a route table that sends all outbound internet traffic (0.0.0.0/0) to the Internet Gateway.
 
-The private subnet has a different route table, which directs outbound internet traffic through a NAT Gateway (í´) instead of the Internet Gateway.
+The private subnet has a different route table, which directs outbound internet traffic through a NAT Gateway instead of the Internet Gateway.
 
-í¼ Elastic IP (EIP)
-An Elastic IP (í¼) is a static public IP address reserved for your account. Itâ€™s attached to the NAT Gateway to give it a consistent internet-facing IP.
+Elastic IP (EIP)
+An Elastic IP is a static public IP address reserved for your account. Itâ€™s attached to the NAT Gateway to give it a consistent internet-facing IP.
 
-í´ NAT Gateway
-A NAT Gateway (í´) sits in the public subnet and enables resources in the private subnet to access the internet for updates or downloads, while keeping them unreachable from the outside.
+NAT Gateway
+A NAT Gateway sits in the public subnet and enables resources in the private subnet to access the internet for updates or downloads, while keeping them unreachable from the outside.
 
-í´— Route Table Associations
+Route Table Associations
 Each subnet is linked to its corresponding route table, ensuring that:
 
 Public subnet traffic goes directly to the internet (via IGW).
