@@ -8,10 +8,10 @@ A public subnet is where resources can connect directly to the internet.
 
 A private subnet is isolated from the internet and typically used for backend resources.
 
-��� Internet Gateway (IGW)
+Internet Gateway (IGW)
 An Internet Gateway is attached to the VPC to allow communication between the public subnet and the internet — it acts like the main entrance door.
 
-��� Route Tables and Associations
+Route Tables and Associations
 
 A route table contains rules that direct traffic from subnets to the right destination (internet, NAT, or local subnet).
 
